@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+
+:root{
+    --primary-black : #000000;
+    --primary-neutral : #404040;
+    --primary-white : #FFFFFF;
+    --zinc-100 : #f4f4f5;
+    --zinc-200 : #e4e4e7;
+    --zinc-300 : #d4d4d8;
+    --zinc-500 : #71717a;
+    --zinc-800 : #27272a;
+    --error-500 : #ef4444;
+    
+    --common-tracking : -2%;
+
+    --display-text-font-size : 48px;
+    --display-text-line-height : 56px;
+    --display-text-m-font-size : 24px;
+    --display-text-m-line-height : 28px;
+
+    --outlined-m-font-size : 24px;
+    --outlined-m-line-height : 28px;
+
+    --sub-heading-font-size : 40px;
+    --sub-heading-line-height : 48px;
+
+    --heading-h1-font-size : 36px;
+    --heading-h1-line-height : 44px;
+    --heading-h2-font-size : 32px;
+    --heading-h2-line-height : 40px;
+    --heading-h3-font-size : 28px;
+    --heading-h3-line-height : 32px;
+    --heading-h4-font-size : 24px;
+    --heading-h4-line-height : 28px;
+    --heading-h5-font-size : 20px;
+    --heading-h5-line-height : 24px;
+    --heading-h6-font-size : 16px;
+    --heading-h6-line-height : 20px;
+
+    --paragraph-p1-font-size : 20px;
+    --paragraph-p1-line-height : 24px;
+    --paragraph-p2-font-size : 16px;
+    --paragraph-p1-line-height : 20px;
+    --paragraph-p3-font-size : 12px;
+    --paragraph-p1-line-height : 16px;
+
+    --button-1-font-size : 20px;
+    --button-1-line-height : 24px;
+    --button-2-font-size : 16px;
+    --button-2-line-height : 20px;
+
+    --underlined-font-size : 20px;
+    --underlined-line-height : 24px;
+
+    --default-padding : 10%;
+}
+
+*{
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: auto;
+    font-style: normal;
+    letter-spacing: var(--common-tracking);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.h1{
+    font-size: var(--heading-h1-font-size);
+    line-height: var(--heading-h1-line-height);
+}
+
+.h2{
+    font-size: var(--heading-h2-font-size);
+    line-height: var(--heading-h2-line-height);
+}
+
+.h3{
+    font-size: var(--heading-h3-font-size);
+    line-height: var(--heading-h3-line-height);
+}
+
+.h4{
+    font-size: var(--heading-h4-font-size);
+    line-height: var(--heading-h4-line-height);
+}
+
+.h5{
+    font-size: var(--heading-h5-font-size);
+    line-height: var(--heading-h5-line-height);
+}
+
+.h6{
+    font-size: var(--heading-h6-font-size);
+    line-height: var(--heading-h6-line-height);
+}
+
+.emphasize{
+    color: var(--zinc-300);
+}
+.thin100{
+    font-weight: lighter;
+}
+
+.menu-bar{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 10dvw;
+    font-weight: bold;
+    padding-inline: var(--default-padding);
+}
+
+.menu-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2dvw;
+    width: 38dvw;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.menu-detail > ul:hover {
+    background-color: var(--zinc-200);
+    border-radius: 4px;
+}
+
+.menu-detail > ul:not(:first-child) {
+    margin-left: 10%;
+}
+
+.menu-bar > button{
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    font-size: var(--button-1-font-size);
+    line-height: var(--button-1-line-height);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.menu-bar > button:hover{
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    /*border-color: var(--primary-white);*/
+}
+
+#description{
+    width: 75%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 10dvh;
+    padding-inline: var(--default-padding);
+}
+.left-description{
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description-title{
+    font-size: var(--display-text-font-size);
+    line-height: var(--display-text-line-height);
+    width: fit-content;
+    white-space: nowrap;
+}
+.description-detil{
+    font-size: var(--paragraph-p2-font-size);
+    color: var(--zinc-300);
+    margin-top: auto;
+}
+
+.right-description{
+    width: 50dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#profile_img{
+    width: 50%;
+    border-radius: 10px;
+}
+
+#my-skills{
+    margin-block: 10dvh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#my-skills > h2{
+    margin-bottom: 5%;
+}
+
+#my-skills > h2 > span{
+    font-weight: bolder;
+}
+
+.skills{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 18% 18% 18% 18%;
+    grid-template-rows: 50% 50%;
+    width: 80dvw;
+    height: 20dvw;
+    gap: 4dvw;
+    padding-inline: var(--default-padding)
+}
+
+.skills > figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-color: var(--primary-black);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.skills > figure > p{
+    font-size: var(--paragraph-p1-font-size);
+    line-height: var(--paragraph-p1-line-height);
+}
+
+.skills > figure:hover{
+    position: relative;
+    filter: invert(100%);
+    background-color: var(--primary-white);
+    animation: item-up 0.5s ease-in-out forwards;
+}
+
+.skills > figure:not(:hover){
+    position: relative;
+    animation: item-down 0.5s ease-in-out forwards;
+}
+
+#my-experience{
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#my-experience > h2 > span{
+    font-weight: bolder;
+}
+.experience-card{
+    border: var(--zinc-500) solid;
+    border-radius: 10px;
+}
+
+.card-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--heading-h4-font-size);
+    line-height: var(--heading-h4-line-height);
+}
+
+.card-logo{
+    width: 32px;
+    height: 32px;
+}
+
+#cagi-logo{
+    filter: invert(100%)
+}
+
+#ICT_mentoring_logo{
+    width: 98px;
+    filter: invert(100%);
+}
+
+@media screen and (max-width:1584px) {
+    .menu-bar{
+        font-size: var(--heading-h6-font-size);
+        line-height: var(--heading-h6-line-height);
+    }
+}
+
+@keyframes item-up{
+  from{
+    top: 0;
+  }
+  to{
+    top: -10px;
+  }
+}
+
+@keyframes item-down{
+  from{
+    top: -10px;
+  }
+  to{
+    top: 0;
+  }
+}
