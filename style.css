@@ -136,18 +136,26 @@ body{
 
 .menu-bar > button{
     background-color: var(--primary-black);
-    color: var(--primary-white);
     font-size: var(--button-1-font-size);
     line-height: var(--button-1-line-height);
     border-radius: 4px;
     padding: 5px;
 }
 
-.menu-bar > button:hover{
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    /*border-color: var(--primary-white);*/
+.menu-bar > button > a {
+    color: var(--primary-white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.menu-bar > button:hover{
+    /* background-color: var(--primary-white); */
+    /*border-color: var(--primary-white);*/
+    filter: invert(100%);
+}
+
 
 #description{
     width: 75%;
@@ -156,6 +164,7 @@ body{
     margin-top: 10dvh;
     padding-inline: var(--default-padding);
 }
+
 .left-description{
     padding-left: 10%;
     display: flex;
@@ -169,6 +178,7 @@ body{
     width: fit-content;
     white-space: nowrap;
 }
+
 .description-detil{
     font-size: var(--paragraph-p2-font-size);
     color: var(--zinc-300);
@@ -189,12 +199,13 @@ body{
 }
 
 #my-skills{
-    margin-block: 10dvh;
+    padding-block: var(--default-padding);
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #my-skills > h2{
@@ -213,7 +224,7 @@ body{
     width: 80dvw;
     height: 20dvw;
     gap: 4dvw;
-    padding-inline: var(--default-padding)
+    padding-inline: var(--default-padding);
 }
 
 .skills > figure{
@@ -225,6 +236,16 @@ body{
     border-width: 2px;
     border-style: solid;
     border-radius: 15px;
+    cursor : pointer;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.summation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .skills > figure > p{
@@ -244,34 +265,88 @@ body{
     animation: item-down 0.5s ease-in-out forwards;
 }
 
+.skills > figure > div {
+    margin-top: 15px;
+    line-height: var(--button-1-line-height);
+}
+
+.hidden{
+    display: none;
+}
+
+.expand{
+    transition: all 0.5s ease;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* 위→아래 배치 */
+    align-items: flex-start !important; /* 왼쪽 정렬 */
+    justify-content: flex-start !important; /* 위쪽 정렬 */
+    padding: 20px; /* 필요 시 padding 조정 */
+}
+
 #my-experience{
+    position: relative;
     background-color: var(--primary-black);
     color: var(--primary-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-block: var(--default-padding);
+    overflow: hidden;
 }
 
-#my-experience > h2 > span{
-    font-weight: bolder;
+#my-experience h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  
 }
-.experience-card{
-    border: var(--zinc-500) solid;
+
+#my-experience h2 span {
+  font-weight: 700;
+}
+
+.experience-card {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    border: 1px var(--zinc-500) solid;
     border-radius: 10px;
+    padding: 24px 30px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 80dvw;
 }
 
-.card-title{
+.card-title {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    color: var(--primary-white);
     font-size: var(--heading-h4-font-size);
     line-height: var(--heading-h4-line-height);
+    margin-bottom: 10px;
 }
 
 .card-logo{
     width: 32px;
     height: 32px;
+    margin-right: 10px;
+}
+
+.card-content {
+  font-size: var(--paragraph-p2-font-size);
+  line-height: var(--heading-h6-line-height);
+  color: var(--zinc-300);
+}
+
+.card-duration {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: var(--paragraph-p2-font-size);
+  color: var(--zinc-300);
 }
 
 #cagi-logo{
@@ -281,6 +356,189 @@ body{
 #ICT_mentoring_logo{
     width: 98px;
     filter: invert(100%);
+}
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 80dvw;
+  margin: 0 auto;
+  padding-block:var(--default-padding) ;
+  border-radius: 8px;
+  flex-wrap: wrap; /* 반응형 대응 */
+}
+
+.about-me-detail{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-profile-container img {
+  width: 70%;
+  border-radius: 12px;
+}
+
+/* 오른쪽 설명 컨테이너 */
+.right-profile-description {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-profile-description h2 {
+  font-size: var(--display-text-font-size);
+  line-height: var(--display-text-line-height);
+  margin-bottom: 5%;
+}
+
+.right-profile-description h2 span {
+  font-weight: 700;
+}
+
+.profile-content {
+  font-size: var(--paragraph-p2-font-size);
+  color: var(--zinc-500);
+  white-space: pre-line; /* 개행 유지 */
+}
+
+#my-projects{
+    background-color: var(--primary-black);
+    width: 100dvw;
+    color: var(--primary-white);
+    padding-block: var(--default-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#my-projects > div {
+    position: absolute;
+    z-index: 1;
+}
+
+#my-projects> h2 {
+    font-size: var(--display-text-font-size);
+    line-height: var(--display-text-line-height);
+}
+
+#my-projects> h2 > span{
+    font-weight: 700;
+}
+
+#my-projects> a{
+    display: block;
+    padding-block: 3dvh;
+    z-index: 10;
+}
+
+#my-projects> article {
+    font-size: var(--display-text-m-font-size);
+    line-height: var(--display-text-m-line-height);
+}
+
+.glowing-div{
+    width: 30dvw;
+    height: 30dvw;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+    animation: glow 1.5s infinite alternate;
+}
+
+#contact-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80dvw;
+    padding: var(--default-padding);
+    overflow: hidden;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid var(--primary-black);
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.submit-btn {
+  background: var(--primary-black);
+  color: var(--primary-white);
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.contact-title{
+    font-size: var(--display-text-font-size);
+    line-height: var(--display-text-line-height);
+    font-weight: 700;
+    margin-bottom: 5dvh;
+}
+
+.contact-description:hover{
+    -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+footer{
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    width: 100dvw;
+    padding-bottom: 10px;
+}
+
+.footer-bar{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 25px;
+    align-items: flex-end;
+    font-weight: bold;
+}
+
+.footer-bar > a {
+    color: var(--primary-white);
+}
+.footer-bar > div > p { 
+    font-size: var(--paragraph-p2-font-size);
+    line-height: var(--paragraph-p2-font-size);
 }
 
 @media screen and (max-width:1584px) {
@@ -305,5 +563,48 @@ body{
   }
   to{
     top: 0;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
 }
