@@ -301,7 +301,6 @@ body{
 
 #my-experience h2 {
   text-align: center;
-  font-size: 2rem;
   margin-bottom: 40px;
   
 }
@@ -577,13 +576,6 @@ footer{
     line-height: var(--paragraph-p2-font-size);
 }
 
-@media screen and (max-width:1584px) {
-    .menu-bar{
-        font-size: var(--heading-h6-font-size);
-        line-height: var(--heading-h6-line-height);
-    }
-}
-
 @keyframes item-up{
   from{
     top: 0;
@@ -643,4 +635,53 @@ footer{
     -webkit-transform: rotate(2deg);
             transform: rotate(2deg);
   }
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.mobile-menu > div{
+    width: 40px;
+    height: 5px;
+    background-color: var(--primary-black);
+}
+
+@media screen and (max-width:1250px) {
+    .disable{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        cursor: pointer;
+    }
+
+    .menu-bar > button {
+        display: none;
+    }
+
+    .menu-detail{
+        display: none;
+    }
+
+    .menu-bar{
+        justify-content: space-between;
+    }
+
+    #profile_img{
+        width: 22dvw;
+    }
+
+    .description-title{
+        font-size: var(--display-text-m-font-size);
+        line-height: var(--display-text-m-line-height);
+    }
+
+    .h2{
+        font-size: var(--display-text-m-font-size);
+        line-height: var(--display-text-m-line-height);
+    }
 }
