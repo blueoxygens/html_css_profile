@@ -511,9 +511,44 @@ body{
     margin-bottom: 5dvh;
 }
 
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-description {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ff4757; /* 예시: 코랄/레드 계열 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-description svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
 .contact-description:hover{
     -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    background-color: #e84118;
+    color: var(--primary-white);
+}
+
+#how-many-likes{
+    margin: 0;
+    font-size: var(--display-text-m-font-size);
+    line-height: var(--display-text-m-line-height);
+    color: #555;
 }
 
 footer{
