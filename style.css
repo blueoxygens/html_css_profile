@@ -199,7 +199,8 @@ body{
 }
 
 #my-skills{
-    padding-block: var(--default-padding);
+    padding-top: var(--default-padding);
+    padding-bottom: 8dvw;
     height: fit-content;
     display: flex;
     flex-direction: column;
