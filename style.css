@@ -647,7 +647,7 @@ footer{
     background-color: var(--primary-black);
 }
 
-@media screen and (max-width:1250px) {
+@media screen and (min-width:769px) and (max-width:1250px) {
     .disable{
         display: none;
     }
@@ -673,6 +673,45 @@ footer{
 
     #profile_img{
         width: 22dvw;
+    }
+
+    .description-title{
+        font-size: var(--display-text-m-font-size);
+        line-height: var(--display-text-m-line-height);
+    }
+
+    .h2{
+        font-size: var(--display-text-m-font-size);
+        line-height: var(--display-text-m-line-height);
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:768px) {
+    .disable{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        cursor: pointer;
+    }
+
+    .menu-bar > button {
+        display: none;
+    }
+
+    .menu-detail{
+        display: none;
+    }
+
+    .menu-bar{
+        justify-content: space-between;
+    }
+
+    #profile_img{
+        display: none;
     }
 
     .description-title{
